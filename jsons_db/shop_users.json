@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "605b0b53c8ef362d68211ebd"
+  },
+  "role": "regular",
+  "date_created": {
+    "$date": "2021-03-24T09:50:11.029Z"
+  },
+  "name": "koko akof",
+  "email": "koko@walla.com",
+  "pass": "$2b$10$tck04UIv8cBaKnNT7NjH3ulbe5/xo6LPWFrVoJ.dWfniriKqA2WqG",
+  "phone": "050-8894444",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "605b23c97b1e5c1254e294ea"
+  },
+  "role": "admin",
+  "date_created": {
+    "$date": "2021-03-24T11:31:28.129Z"
+  },
+  "name": "biden admin",
+  "email": "biden@walla.com",
+  "pass": "$2b$10$RjZYQTeFlMGEAg7JIFlEEu81hs5erhMF5Ts5toE/Fjo4/KqkvjSFe",
+  "phone": "050-8894444",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6073ff45fffb3544b4b6bd3f"
+  },
+  "role": "admin",
+  "date_created": {
+    "$date": "2021-04-12T07:23:05.268Z"
+  },
+  "name": "moshe",
+  "email": "moshe@walla.com",
+  "pass": "$2b$10$JwpaBjpDmLikl2TAaiVwu.jNehwfcdfbRh2FdR89MccKo1tTuYLuq",
+  "phone": "09-55545431",
+  "__v": 0
+}]

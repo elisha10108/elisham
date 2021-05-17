@@ -1,0 +1,4 @@
+- option to edit category (not the s_id)
+- option to delete category
+- option to edit user ( not its email and not its password)
+- pagenation in the list of prods , users

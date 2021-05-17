@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "605b0fa2c5769b34f037afcf"
+  },
+  "s_id": 1,
+  "name": "food",
+  "info": "info about category"
+},{
+  "_id": {
+    "$oid": "605b0fa2c5769b34f037afd0"
+  },
+  "s_id": 2,
+  "name": "games",
+  "info": "info about category - video games"
+},{
+  "_id": {
+    "$oid": "605b0fa2c5769b34f037afd1"
+  },
+  "s_id": 3,
+  "name": "kids",
+  "info": "info about category"
+},{
+  "_id": {
+    "$oid": "605b0fa2c5769b34f037afd2"
+  },
+  "s_id": 4,
+  "name": "clothing",
+  "info": "info about category"
+},{
+  "_id": {
+    "$oid": "606d5ee8e4444f3c4c59adb2"
+  },
+  "s_id": 5,
+  "name": "school",
+  "__v": 0
+}]

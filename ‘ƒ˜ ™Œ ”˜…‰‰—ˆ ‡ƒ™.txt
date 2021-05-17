@@ -1,0 +1,14 @@
+1. זה להגדיר פרוויקט NPM על ידי הפקודה npm init --y
+2. מתקין את כל המודולים שצריך לפרוויקט כגון 
+npm i express
+npm i mongoose
+npm i lodash
+npm i jsonwebtoken
+npm i bcrypt
+npm i joi
+npm i axios
+3. נערוך את PACK JSON נמחוק את ה MAIN וב SCRIPTS נגדיר את מאפיין בשם
+START שבתוכו תיהיה הפקודה node app
+3. מגדיר את קובץ APP 
+4. מגדיר קובץ config_routes שבתוכו יגדרו כל הROUTES כולל הגישה 
+5. כל השאר זהה כמו ב GENERATOR (לא לשכוח לייבא ל APP גם את MONGO או SQL)

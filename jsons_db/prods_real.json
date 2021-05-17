@@ -1,0 +1,148 @@
+[{
+  "_id": {
+    "$oid": "606d5751fe1bfd0b58cc15ac"
+  },
+  "date_created": {
+    "$date": "2021-04-07T06:51:20.993Z"
+  },
+  "name": "burger mr crab",
+  "info": "best burger in the world",
+  "img": "",
+  "price": 30,
+  "qty": 99999,
+  "category_s_id": 3,
+  "tags": "food , burger",
+  "comments": "",
+  "user_id": "605b23c97b1e5c1254e294ea",
+  "s_id": 489383
+},{
+  "_id": {
+    "$oid": "606d57d5fe1bfd0b58cc15ad"
+  },
+  "date_created": {
+    "$date": "2021-04-07T06:51:20.993Z"
+  },
+  "name": "Truck toy",
+  "info": "Truck toy for kids",
+  "img": "",
+  "price": 70,
+  "qty": 99999,
+  "category_s_id": 3,
+  "tags": "truck, cars",
+  "comments": "",
+  "user_id": "605b23c97b1e5c1254e294ea",
+  "s_id": 735989
+},{
+  "_id": {
+    "$oid": "607431071cdd8a3b04a5b47d"
+  },
+  "date_created": {
+    "$date": "2021-04-12T08:37:40.004Z"
+  },
+  "name": "pizza",
+  "info": "bla bla",
+  "price": 5,
+  "img": "http://",
+  "qty": 4,
+  "comments": "bla bla 222",
+  "category_s_id": 2,
+  "user_id": "605b23c97b1e5c1254e294ea",
+  "s_id": 761249
+},{
+  "_id": {
+    "$oid": "60743d616b68ad49c86722d3"
+  },
+  "date_created": {
+    "$date": "2021-04-12T12:28:28.675Z"
+  },
+  "name": "pizza 4",
+  "info": "bla bla",
+  "price": 5,
+  "img": "http://",
+  "qty": 4,
+  "comments": "bla bla 222",
+  "category_s_id": 9,
+  "user_id": "605b23c97b1e5c1254e294ea",
+  "s_id": 295234
+},{
+  "_id": {
+    "$oid": "607d715f345a4f4f8431b8e3"
+  },
+  "date_created": {
+    "$date": "2021-04-19T11:56:25.813Z"
+  },
+  "name": "pizza 3333",
+  "info": "bla bla",
+  "price": 5,
+  "img": "http://",
+  "qty": 4,
+  "comments": "bla bla 222",
+  "category_s_id": 9,
+  "user_id": "605b23c97b1e5c1254e294ea",
+  "s_id": 912612
+},{
+  "_id": {
+    "$oid": "6080068847b5c62ca8317709"
+  },
+  "name": "Spiderman Action Figure",
+  "info": "He is very strong and much faster than koko!",
+  "img": "https://images.pexels.com/photos/5691160/pexels-photo-5691160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "price": 100.99,
+  "qty": 99999,
+  "category_s_id": 3,
+  "tags": "spiderman, toy",
+  "comments": "",
+  "s_id": 295235
+},{
+  "_id": {
+    "$oid": "6080068847b5c62ca831770a"
+  },
+  "name": "Koko Toy",
+  "info": "He is fast angry and a monkey",
+  "img": "https://images.pexels.com/photos/4437556/pexels-photo-4437556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "price": 1000.99,
+  "qty": 99999,
+  "category_s_id": 3,
+  "tags": "koko, monkey, toy",
+  "comments": "",
+  "s_id": 295236
+},{
+  "_id": {
+    "$oid": "6080068847b5c62ca831770b"
+  },
+  "name": "Chocolate Cake",
+  "info": "Amazing cake!",
+  "img": "https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "price": 100.99,
+  "qty": 99999,
+  "category_s_id": 1,
+  "tags": "food, cake",
+  "comments": "",
+  "s_id": 295238
+},{
+  "_id": {
+    "$oid": "6080068847b5c62ca831770c"
+  },
+  "name": "Apple Pie",
+  "info": "Amazing pie!",
+  "img": "https://images.pexels.com/photos/989704/pexels-photo-989704.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "price": 100.99,
+  "qty": 99999,
+  "category_s_id": 1,
+  "tags": "food, cake",
+  "comments": "",
+  "s_id": 299999
+},{
+  "_id": {
+    "$oid": "6080068847b5c62ca831770d"
+  },
+  "name": "Vannila Dessert",
+  "info": "Amazing!! So gooodd",
+  "img": "https://images.pexels.com/photos/161420/ice-cream-cone-melting-hot-ice-cream-scoop-161420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "price": 79.99,
+  "qty": 99999,
+  "category_s_id": 1,
+  "tags": "food, cake",
+  "comments": "",
+  "s_id": 111222
+}]
