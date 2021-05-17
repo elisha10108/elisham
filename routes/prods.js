@@ -57,7 +57,7 @@ router.get("/single/:id", async (req, res) => {
   }
 })
 
-router.get("/search/" , async(req,res) => {
+router.get("/search" , async(req,res) => {
   let searchQ = req.query.q;
   let searchRexExp = new RegExp(searchQ,"i");
 

@@ -30,7 +30,7 @@ exports.validProd = (_bodyData) => {
     price:Joi.number().min(1).max(999999).required(),
     qty:Joi.number().min(1).max(999999).required(),
     category_s_id:Joi.number().min(1).max(999999).required(),
-    tags:Joi.string().max(500).allow(null, ''),
+    tags:Joi.string().max(500).required(),
     comments:Joi.string().max(500).allow(null, ''),
   })
 

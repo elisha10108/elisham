@@ -60,6 +60,8 @@ router.post("/", authToken,authAdminToken, async(req,res) => {
   } 
 })
 
+
+
 router.put("/:editId", authToken,authAdminToken, async(req,res) => {
   let editId = req.params.editId;
   let validBody = validCategory(req.body);
