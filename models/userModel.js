@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+const { array, object } = require("joi");
+const { join } = require("lodash");
 
 let userSchema = new mongoose.Schema({
   name:String,
@@ -15,17 +17,11 @@ let userSchema = new mongoose.Schema({
   phone:String,
   address:String,
   avatarImg:String,
-  comments:String
+  comments:String,
+  carts :Array
 })
 
 exports.UserModel = mongoose.model("shop_users",userSchema);
-
-exports.genToken = (_id) => {
-  let token = jwt.sign({_id},"monkeysSecret",{expiresIn:"60mins"});
-  return token;
-}
-
-
 
 exports.validUser = (_bodyUser) => {
   // סכמה של הצד השרת ובעצם תתבצע בדיקה בצד שרת
@@ -37,6 +33,7 @@ exports.validUser = (_bodyUser) => {
     phone:Joi.string().min(9).max(20).required(),
     address:Joi.string().min(2).max(200).allow(null, ''),
     avatarImg:Joi.string().min(2).max(200).allow(null, ''),
+    // carts:Joi.array.allow(null,''),
   })
 // אם יש טעות יחזיר מאפיין שיש בו אירור
   return joiSchema.validate(_bodyUser);
@@ -54,3 +51,7 @@ exports.validLogin = (_bodyUser) => {
   return joiSchema.validate(_bodyUser);
 }
 
+exports.genToken = (_id) => {
+  let token = jwt.sign({_id},"monkeysSecret",{expiresIn:"60mins"});
+  return token;
+}

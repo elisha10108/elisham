@@ -3,7 +3,6 @@ const Joi = require("joi");
 
 const cartSchema = new mongoose.Schema({
   user_id:String,
-  // נשמור א המערך כסטרינג
   carts_ar:String,
   total:Number,
   status:{

@@ -1,6 +1,7 @@
 const express = require("express");
 const { authToken, authAdminToken } = require("../middlewares/auth");
 const { validCart, CartModel } = require("../models/cartModel");
+const { UserModel } = require("../models/userModel");
 
 const router = express.Router();
 
@@ -20,17 +21,53 @@ router.get("/singleCart/:cartId", authToken, authAdminToken ,async(req,res) => {
   }
 })
 
+
+
+router.post("/addcart",authToken ,async(req,res)=>{
+  let cart = req.body;
+  try{
+  let data = await UserModel.updateMany({_id:req.userData._id ,carts:cart} )
+  res.json(data);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+
+
+
+router.get("/getcart",authToken ,async(req,res)=>{
+  idCart=req.userData._id;
+  try{
+let data = await UserModel.findOne({_id:idCart})
+res.json(data.carts);
+  }  
+  catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+})
+
+
+
+
+
+
+
+
+
 router.get("/allCarts", authToken, authAdminToken ,async(req,res) => {
   let perPage = (req.query.perPage) ? Number(req.query.perPage) : 100;
   let page = (req.query.page) ? Number(req.query.page) : 0;
   let sortQ = (req.query.sort) ? req.query.sort : "_id";
   let ifReverse = (req.query.reverse == "yes") ? -1 : 1;
-  // בודק אם נשלח קווארי סטרינג של קטגוריה ואם לא יהיה ריק אם כן יעשה פילטר של קטגוריה
-  // ?cat=
+
   let filterCat = (req.query.cat) ? { category_s_id: req.query.cat } : {};
 
   try {
-    // filter -> זה השאילתא
+ 
     let data = await CartModel.find(filterCat)
       .sort({ [sortQ]: ifReverse })
       .limit(perPage)
@@ -49,15 +86,14 @@ router.post("/", authToken, async(req,res) => {
     return res.status(400).json(validBody.error.details);
   }
   try{
-    // בודקים אם יש רשומה במצב פנדינג עם איי די 
-    // של המשתמש אם אין נייצר חדש אם קיים נעדכן
+
     let cartData = await CartModel.findOne({user_id: req.userData._id , status:"pending"});
-    // נמצא ולכן יעודכן
+
     if(cartData){
       let data = await CartModel.updateOne({_id:cartData._id},req.body);
       return res.json(data);
     }
-    // לא נמצא ולכן נייצר רשומה חדשה
+
     let newData = new CartModel(req.body);
     newData.user_id = req.userData._id;
     //TODO: send email to the shop owner and maybe also to customer
@@ -70,7 +106,7 @@ router.post("/", authToken, async(req,res) => {
   } 
 })
 
-// משנה את הסטטוס של הקארט אם הושלם , פנדינג או בוטל
+
 router.patch("/status/:idCart", authToken, authAdminToken , async(req,res) => {
   if(!req.body.status){
     return res.status(400).json({msg:"You must send status in body"});

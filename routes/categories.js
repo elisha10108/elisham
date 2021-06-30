@@ -50,7 +50,7 @@ router.post("/", authToken,authAdminToken, async(req,res) => {
   try{
     let category = new CategoryModel(req.body);
  
-   // console.log(category.s_id);
+   
     await category.save();
     res.status(201).json(category);
   } 
