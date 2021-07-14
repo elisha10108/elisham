@@ -8,9 +8,8 @@ const mongoConnect = require("./db/mongoConnect");
 
 const app = express();
 
-// give the option to upload files
 app.use(fileUpload({
-  // מגביל שגודל קובץ מקסימלי הוא 5 מב
+ 
   limits:{ fileSize: 5*1024*1024}
 }))
 app.use(express.json());
@@ -23,5 +22,3 @@ routesInit(app);
 const server = http.createServer(app);
 let port = process.env.PORT || "3004";
 server.listen(port);
-
-//11:00

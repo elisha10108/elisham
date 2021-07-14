@@ -4,10 +4,10 @@ const {random} = require("lodash");
 const { string } = require("joi");
 
 const prodSchema = new mongoose.Schema({
-  name:String,
+  name:{type:String, default:""},
   info:String,
   img:String,
-  price:Number,
+  price:{type:Number, default:0},
   qty:Number,
   category_s_id:Number,
   tags:String,
@@ -16,7 +16,8 @@ const prodSchema = new mongoose.Schema({
     type:Date, default:Date.now()
   },
   user_id:String,
-  comments:String
+  comments:String,
+  count:{type:Number, default:0}
 })
 
 exports.ProdModel = mongoose.model("prods",prodSchema);
