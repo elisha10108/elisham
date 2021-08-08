@@ -17,7 +17,8 @@ const prodSchema = new mongoose.Schema({
   },
   user_id:String,
   comments:String,
-  count:{type:Number, default:0}
+  count:{type:Number, default:0},
+  type:String
 })
 
 exports.ProdModel = mongoose.model("prods",prodSchema);
@@ -26,13 +27,15 @@ exports.ProdModel = mongoose.model("prods",prodSchema);
 exports.validProd = (_bodyData) => {
   let joiSchema = Joi.object({
     name:Joi.string().min(2).max(100).required(),
-    info:Joi.string().min(2).max(500).required(),
+    info:Joi.string().min(2).max(500).allow(null, ''),
     img:Joi.string().max(500).allow(null, ''),
     price:Joi.number().min(1).max(999999).required(),
     qty:Joi.number().min(1).max(999999).required(),
     category_s_id:Joi.number().min(1).max(999999).required(),
-    tags:Joi.string().max(500).required(),
+    tags:Joi.string().max(500),
     comments:Joi.string().max(500).allow(null, ''),
+    type:Joi.string().max(20).required(),
+    count:Joi.number().allow(null,''),
   })
 
   return joiSchema.validate(_bodyData);

@@ -28,19 +28,39 @@ router.post("/checkAdmin",authToken,authAdminToken,async(req,res) => {
 
 
 
+router.delete("/:idDel", authToken, authAdminToken, async (req, res) => {
+  let idDel = req.params.idDel;
+  try {
+    let data = await UserModel.deleteOne({ _id: idDel });
+    res.json(data);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(400).send(err)
+  }
+})
+
+router.put("/:editId", authToken, authAdminToken, async (req, res) => {
+  let editId = req.params.editId;
+  try {
+    req.body.user_id = req.userData._id;
+    let data = await UserModel.updateOne({ _id: editId }, req.body)
+    res.status(201).json(data);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(400).send(err)
+  }
+})
 
 
-
-
-
-//TODO: edit phone and address and name
 
 
 
 
 router.get("/myInfo",authToken ,async(req,res) => {
   try{
-    console.log(req.userData._id);
+ 
     let user = await UserModel.findOne({_id:req.userData._id},{pass:0});
     res.json(user);
   }
@@ -51,10 +71,10 @@ router.get("/myInfo",authToken ,async(req,res) => {
 })
 
 
-router.get("/singleUser/:userId", authToken, authAdminToken ,async(req,res) => {
-  let userId = req.params.userId;
+router.get("/singleUser/:userId",async(req,res) => {
+  let user = req.params.userId;
   try{
-    let data = await UserModel.findOne({_id:userId},{pass:0});
+    let data = await UserModel.findOne({_id:user},{pass:0});
     res.json(data);
   }
   catch(err){

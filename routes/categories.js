@@ -16,7 +16,19 @@ router.get("/", async(req,res) => {
   }
 })
 
-// get info about single category like name and info
+router.get("/gets_id", async(req,res) => {
+  try{
+
+    let data = await CategoryModel.find();
+    res.json(data);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+})
+
+
 router.get("/single/:idCategory", async(req,res) => {
   let idCategory = req.params.idCategory;
   try{
@@ -29,6 +41,20 @@ router.get("/single/:idCategory", async(req,res) => {
     res.status(400).json(err);
   }
 })
+
+router.get("/singleEdit/:idCat", async(req,res) => {
+  let idCategory = req.params.idCat;
+  try{
+
+    let data = await CategoryModel.findOne({_id:idCategory}).sort({_id:-1});
+    res.json(data);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+})
+
 router.get("/singleCat", async(req,res) => {
   try{
 
@@ -78,6 +104,8 @@ router.put("/:editId", authToken,authAdminToken, async(req,res) => {
     res.status(400).send(err)
   } 
 })
+
+
 
 router.delete("/:idDel", authToken , authAdminToken, async(req,res) => {
   let idDel = req.params.idDel;

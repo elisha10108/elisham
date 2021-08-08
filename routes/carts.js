@@ -9,6 +9,8 @@ router.get("/", (req,res) => {
   res.json({msg:"carts work"});
 })
 
+
+
 router.get("/singleCart/:cartId", authToken, authAdminToken ,async(req,res) => {
   let cartId = req.params.cartId;
   try{
@@ -50,11 +52,6 @@ router.get("/getcart",authToken ,async(req,res)=>{
     res.status(400).json(err);
   }
 })
-
-
-
-
-
 
 
 

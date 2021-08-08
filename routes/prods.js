@@ -27,8 +27,6 @@ router.get("/", async (req, res) => {
   }
 })
 router.get("/all", async (req, res) => {
-
-
   try {
     let data = await ProdModel.find()
  
@@ -169,6 +167,29 @@ router.put("/:editId", authToken, authAdminToken, async (req, res) => {
   }
 })
 
+
+
+router.put("/addcount/:editId", async (req, res) => {
+  let editId = req.params.editId;
+  let validBody = validProd(req.body);
+  if (validBody.error) {
+    return res.status(400).json(validBody.error.details);
+  }
+  try {
+    let data = await ProdModel.updateOne({ _id: editId }, req.body)
+
+    res.status(201).json(data);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(400).send(err)
+  }
+})
+
+
+
+
+
 router.delete("/:idDel", authToken, authAdminToken, async (req, res) => {
   let idDel = req.params.idDel;
   try {
@@ -180,7 +201,6 @@ router.delete("/:idDel", authToken, authAdminToken, async (req, res) => {
     res.status(400).send(err)
   }
 })
-//TODO: PUT EDIT
 // TODO: just admin can add, delete and edit prod
 
 module.exports = router;
